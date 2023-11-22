@@ -1,0 +1,57 @@
+//1과제 작업 4
+SELECT D.DMNO 발송번호,
+D.CUSTID 고객ID,
+C.AUTHOR 고객명,
+TO_CHAR(D.MAILDATE, 'YYYY-MM-DD') 발송일,
+D.CONTENTS 내용,
+D.CAMPAIN 캠페인구분
+FROM DM_TBL D, CUSTOMINFO_TBL C
+WHERE D.CUSTID=C.CUSTID
+ORDER BY D.DMNO;
+
+//1과제 작업 5
+INSERT INTO CUSTOMINFO_TBL (?,?,?,?,?,?);
+
+//1과제 작업 6
+SELECT AREA 지역,
+COUNT(AREA) 건수
+FROM CUSTOMINFO_TBL
+GROUP BY AREA;
+
+//3과제 CREATE SJ_TBL
+CREATE TABLE sj_tbl (
+    SJNO number(8) NOT NULL PRIMARY KEY,
+    CUSTID varchar2(10),
+    SJDATE date,
+    CONTENTS varchar2(20),
+    SEX char(1),
+    GRADE number(2),
+    SJ_GH char(2));
+
+//3과제 INSERT SJ_TBL;
+INSERT INTO SJ_TBL VALUES (1, 'AAA', '20221101', '와우 놀랍군요!', 'M', '97', 'SJ');
+INSERT INTO SJ_TBL VALUES (2, 'BBB', '20221101', '천생연분', 'F', '80', 'GH');
+INSERT INTO SJ_TBL VALUES (3, 'CCC', '20221101', '안 맞아요!', 'F', '44', 'GH');
+INSERT INTO SJ_TBL VALUES (4, 'DDD', '20221118', '무난합니다.', 'F', '70', 'SJ');
+INSERT INTO SJ_TBL VALUES (5, 'EEE', '20221118', '당장 헤어지', 'M', '34', 'GH');
+INSERT INTO SJ_TBL VALUES (6, 'FFF', '20221118', '끼가 없으시', 'M', '20', 'SJ');
+
+
+//3과제 CREATE CUSTOMINFO2_TBL (중복으로 "2"추가)
+CREATE TABLE CUSTOMINFO2_TBL(custid varchar2(10) NOT NULL PRIMARY KEY,
+NAME varchar2(20),
+SEX char(10),
+BIRTH date,
+B_TIME varchar2(10),
+CALENDER varchar2(10)
+);
+
+//3과제 CUSTOMINFO2_TBL INSERT문
+INSERT INTO CUSTOMINFO2_TBL VALUES('aaa', '김고객', '남자', '19690706', '자시', '양력');
+INSERT INTO CUSTOMINFO2_TBL VALUES('bbb', '이고객', '여자', '20001201', '축시', '양력');
+INSERT INTO CUSTOMINFO2_TBL VALUES('ccc', '박고객', '여자', '20020204', '인시', '음력');
+INSERT INTO CUSTOMINFO2_TBL VALUES('ddd', '홍고객', '여자', '19940904', '묘시', '양력');
+INSERT INTO CUSTOMINFO2_TBL VALUES('eee', '조고객', '남자', '19971224', '진시', '음력');
+INSERT INTO CUSTOMINFO2_TBL VALUES('fff', '백고객', '남자', '20011123', '사시', '양력');
+
+//3과제 작업 4 SELECT
