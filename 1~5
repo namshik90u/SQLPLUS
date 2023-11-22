@@ -29,22 +29,21 @@ CREATE TABLE sj_tbl (
     SJ_GH char(2));
 
 //3과제 INSERT SJ_TBL;
-INSERT INTO SJ_TBL VALUES (1, 'AAA', '20221101', '와우 놀랍군요!', 'M', '97', 'SJ');
-INSERT INTO SJ_TBL VALUES (2, 'BBB', '20221101', '천생연분', 'F', '80', 'GH');
-INSERT INTO SJ_TBL VALUES (3, 'CCC', '20221101', '안 맞아요!', 'F', '44', 'GH');
-INSERT INTO SJ_TBL VALUES (4, 'DDD', '20221118', '무난합니다.', 'F', '70', 'SJ');
-INSERT INTO SJ_TBL VALUES (5, 'EEE', '20221118', '당장 헤어지', 'M', '34', 'GH');
-INSERT INTO SJ_TBL VALUES (6, 'FFF', '20221118', '끼가 없으시', 'M', '20', 'SJ');
+INSERT INTO SJ_TBL VALUES (1, 'aaa', '20221101', '와우 놀랍군요!', 'M', '97', 'SJ');
+INSERT INTO SJ_TBL VALUES (2, 'bbb', '20221101', '천생연분', 'F', '80', 'GH');
+INSERT INTO SJ_TBL VALUES (3, 'ccc', '20221101', '안 맞아요!', 'F', '44', 'GH');
+INSERT INTO SJ_TBL VALUES (4, 'ddd', '20221118', '무난합니다.', 'F', '70', 'SJ');
+INSERT INTO SJ_TBL VALUES (5, 'eee', '20221118', '당장 헤어지', 'M', '34', 'GH');
+INSERT INTO SJ_TBL VALUES (6, 'fff', '20221118', '끼가 없으시', 'M', '20', 'SJ');
 
 
 //3과제 CREATE CUSTOMINFO2_TBL (중복으로 "2"추가)
-CREATE TABLE CUSTOMINFO2_TBL(custid varchar2(10) NOT NULL PRIMARY KEY,
+CREATE TABLE CUSTOMINFO2_TBL(CUSTID varchar2(10) NOT NULL PRIMARY KEY,
 NAME varchar2(20),
 SEX char(10),
 BIRTH date,
 B_TIME varchar2(10),
-CALENDER varchar2(10)
-);
+CALENDER varchar2(10));
 
 //3과제 CUSTOMINFO2_TBL INSERT문
 INSERT INTO CUSTOMINFO2_TBL VALUES('aaa', '김고객', '남자', '19690706', '자시', '양력');
@@ -55,3 +54,11 @@ INSERT INTO CUSTOMINFO2_TBL VALUES('eee', '조고객', '남자', '19971224', '�
 INSERT INTO CUSTOMINFO2_TBL VALUES('fff', '백고객', '남자', '20011123', '사시', '양력');
 
 //3과제 작업 4 SELECT
+SELECT S.SJNO 발송번호,
+S.CUSTID 고객ID,
+C.NAME 고객명,
+TO_CHAR(S.SJDATE, 'YYYY-MM-DD') 신청일자,
+S.CONTENTS 사주결과,
+S.SJ_GH 사주구분
+FROM SJ_TBL S, CUSTOMINFO2_TBL C
+WHERE S.CUSTID=C.CUSTID;
