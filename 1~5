@@ -25,7 +25,7 @@ INSERT INTO CUSTOMINFO_TBL VALUES('bbb','이고객','의류','010-1111-1112','bb
 INSERT INTO CUSTOMINFO_TBL VALUES('ccc','박고객','식료품','010-1111-1113','ccc@korea.com','경기');
 INSERT INTO CUSTOMINFO_TBL VALUES('ddd','홍고객','공산품','010-1111-1114','ddd@korea.com','대전');
 INSERT INTO CUSTOMINFO_TBL VALUES('eee','조고객','컴퓨터','010-1111-1115','eee@korea.com','대전');
-INSERT INTO CUSTOMINFO_TBL('fff','백고객','관광','010-1111-1116','fff@korea.com','울산');
+INSERT INTO CUSTOMINFO_TBL VALUES('fff','백고객','관광','010-1111-1116','fff@korea.com','울산');
 
 
 //1과제 작업 4
